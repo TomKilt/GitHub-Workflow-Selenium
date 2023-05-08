@@ -1,18 +1,21 @@
- build:
+name: SeleniumTestRun
 
-     runs-on: ubuntu-latest
+on:
+		workflow_call:
+		
+	jobs:
+		Run:
+	runs-on: ubuntu-latest
 
-     steps:
+		steps:
+		- uses: actions/checkout@v3
+    
+    - name: Install .net core
+			uses: actions/setup-dotnet@v3
+			with:
+				dotnet-version: 6.0.x
 
-    - uses: actions/checkout@v3
-
-    # Install the .NET Core workload
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 6.0.x
-
-    - name: Install Google Chrome 
+      name: Install Google Chrome 
 
       run: |
 
