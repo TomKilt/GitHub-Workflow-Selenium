@@ -1,28 +1,29 @@
 name: SeleniumTestRun
 
 on:
-		workflow_call:
-		
+	workflow_call:
+	workflow_dispatch:
+
 	jobs:
-		Run:
+	Run:
 	runs-on: ubuntu-latest
 
-		steps:
-		- uses: actions/checkout@v3
-    
-    - name: Install .net core
-			uses: actions/setup-dotnet@v3
-			with:
-				dotnet-version: 6.0.x
+	steps:
+	- uses: actions/checkout@v3
 
-      name: Install Google Chrome 
+	name: Install .net core
+	uses: actions/setup-dotnet@v3
+	with:
+	dotnet-version: 6.0.x
 
-      run: |
+	name: Install Google Chrome 
 
-              chmod +x ./scripts/InstallChrome.sh
+	run: |
 
-                          ./scripts/InstallChrome.sh 
+	chmod +x ./scripts/InstallChrome.sh
 
-    # Execute all unit tests in the solution
-    - name: Execute unit tests
-      run: dotnet test UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
+	./scripts/InstallChrome.sh 
+
+	# Execute all unit tests in the solution
+	- name: Execute unit tests
+	run: dotnet test UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
