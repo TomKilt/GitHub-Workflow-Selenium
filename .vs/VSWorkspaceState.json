@@ -1,10 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\UITestAutomation",
-    "\\UITestAutomation\\bin",
-    "\\UITestAutomation\\obj"
+    "\\.github",
+    "\\.github\\workflows",
+    "\\UITestAutomation"
   ],
-  "SelectedNode": "\\UITestAutomation\\obj\\project.assets.json",
+  "SelectedNode": "\\.github\\workflows\\push.yml",
   "PreviewInSolutionExplorer": false
 }
