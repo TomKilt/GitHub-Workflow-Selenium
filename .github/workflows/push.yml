@@ -1,0 +1,15 @@
+name: Selenium Test Run
+
+on:
+	workflow_dispatch:
+	workflow_call:
+
+	jobs:
+		Test_Run:
+			runs-on: ubuntu-latest
+		
+			steps:
+			- uses: actions/checkout@v3
+
+			- name:
+			  run: dotnet test UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
