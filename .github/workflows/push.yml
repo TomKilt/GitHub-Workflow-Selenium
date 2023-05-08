@@ -1,8 +1,6 @@
 name: Selenium Test Run
 
 on:
-	# workflow_dispatch:
-	
 	workflow_call:
 
 	jobs:
