@@ -1,5 +1,4 @@
 name: Selenium Test Runs
-
 on:
     workflow_dispatch:
     workflow_call:
