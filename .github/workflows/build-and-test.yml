@@ -1,4 +1,4 @@
-name: SeleniumTestRun
+name: Selenium Test Run
 
 on:
 	workflow_dispatch:
