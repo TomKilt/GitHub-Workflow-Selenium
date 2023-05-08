@@ -1,14 +1,14 @@
 name: Selenium Test Runs
 
 on:
-    workflow_dispatch:
-    workflow_call:
+       workflow_dispatch:
+       workflow_call:
     
-    jobs:
-        Run:
+jobs:
+    Run:
         runs-on: ubuntu-latest
 
-    steps:
+        steps:
         - uses: actions/checkout@v3
         
         # Install .net core
