@@ -1,6 +1,6 @@
 name: Selenium Test Run
-
 on:
+	wokflow_dispatch:
 	workflow_call:
 
 	jobs:
