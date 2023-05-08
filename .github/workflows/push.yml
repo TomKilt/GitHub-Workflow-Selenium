@@ -11,5 +11,5 @@ on:
 			steps:
 			- uses: actions/checkout@v3
 
-			- name:
+			- name: Run
 			  run: dotnet test UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
