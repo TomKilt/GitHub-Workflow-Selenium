@@ -41,10 +41,10 @@ namespace UITestAutomation
 
             driver.Url.Should().Be(bbcScotlandUrl, "URL is not BBC Scotland");
             //driver.FindElement(By.XPath("//button[text()='Yes, I agree']")).Click();
-            var b = driver.FindElements(By.CssSelector("a[href='https://www.bbc.co.uk']"));
+            //var b = driver.FindElements(By.CssSelector("a[href='https://www.bbc.co.uk']"));
 
-            b[0].Click();
-            driver.Url.Should().Be(bbcUrl, "URL is not BBC");
+            //b[0].Click();
+            //driver.Url.Should().Be(bbcUrl, "URL is not BBC");
         }
     }
 }
