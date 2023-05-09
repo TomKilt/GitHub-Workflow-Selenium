@@ -20,7 +20,7 @@ jobs:
         #- name: Instal Chrome
         - uses: browser-actions/setup-chrome@v1
           with:
-            chrome-version: 113.0
+            chrome-version: stable
           
         - run: chrome --version
         
