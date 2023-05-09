@@ -34,6 +34,7 @@ namespace UITestAutomation
             var navigate = driver.Navigate();
 
             var bbcScotlandUrl = "https://www.bbc.co.uk/scotland";
+            bbcScotlandUrl = "https://www.bbc.com/scotland";
             var bbcUrl = "https://www.bbc.co.uk/";
 
             navigate.GoToUrl(bbcScotlandUrl);
