@@ -21,6 +21,10 @@ jobs:
         #  run: |
         #    chmod +x ./scripts/InstallChrome.sh
         #    ./scripts/InstallChrome.sh
+        
+        - name: Restore
+          run: dotner restore UITestAutomation.csproj
+          
         - name: Build
           run: dotnet build UITestAutomation/UITestAutomation.csproj --configuration Release --no-restore
           
