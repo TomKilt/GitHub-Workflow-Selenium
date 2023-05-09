@@ -7,9 +7,17 @@ namespace UITestAutomation
 {
     public class Tests
     {
+        private IWebDriver driver;
+
         [SetUp]
         public void Setup()
         {
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            driver.Dispose();
         }
 
         [Test]
@@ -17,7 +25,7 @@ namespace UITestAutomation
         {
             var options = new ChromeOptions();
 
-            var driver = new ChromeDriver();
+            driver = new ChromeDriver();
             var navigate = driver.Navigate();
 
             var bbcScotlandUrl = "https://www.bbc.co.uk/scotland";
