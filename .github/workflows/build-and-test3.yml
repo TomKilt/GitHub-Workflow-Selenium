@@ -23,4 +23,4 @@ jobs:
         #    ./scripts/InstallChrome.sh
 
         - name: Test run
-          run: dotnet test UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
+          run: dotnet test UITestAutomation/UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
