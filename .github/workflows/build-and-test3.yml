@@ -23,13 +23,13 @@ jobs:
         #    ./scripts/InstallChrome.sh
         
         - name: Restore
-          run: dotner restore UITestAutomation.csproj
+          run: dotnet restore UITestAutomation.csproj
           
         - name: Build
           run: dotnet build UITestAutomation/UITestAutomation.csproj --configuration Release --no-restore
           
         - name: Test run
-          run: dotnet test UITestAutomation/UITestAutomation.csproj --configuration Release --no-build -- verbosity normal --logger trx
+          run: dotnet test UITestAutomation/UITestAutomation.csproj --configuration Release --no-build --logger trx
 
         - name: Test Report
           uses: dorny/test-reporter@v1
