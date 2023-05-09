@@ -23,7 +23,7 @@ jobs:
         #    ./scripts/InstallChrome.sh
         
         - name: Restore
-          run: dotnet restore UITestAutomation.csproj
+          run: dotnet restore UITestAutomation/UITestAutomation.csproj
           
         - name: Build
           run: dotnet build UITestAutomation/UITestAutomation.csproj --configuration Release --no-restore
