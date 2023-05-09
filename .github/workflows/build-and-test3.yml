@@ -1,4 +1,4 @@
-name: Selenium Test Runs
+name: Selenium Test Run
 
 on:
     workflow_dispatch:
@@ -17,10 +17,10 @@ jobs:
           with:
             dotnet-version: 6.0.x
 
-        - name: Install Chrome
-          run: |
-            chmod +x ./scripts/InstallChrome.sh
-            ./scripts/InstallChrome.sh
+        #- name: Install Chrome
+        #  run: |
+        #    chmod +x ./scripts/InstallChrome.sh
+        #    ./scripts/InstallChrome.sh
 
         - name: Test run
           run: dotnet test UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
