@@ -38,5 +38,5 @@ jobs:
           if: success() || failure()    # run this step even if previous step failed
           with:
             name: Test Results            # Name of the check run which will be created
-            path: UITestAutomation/*.trx    # Path to test results
+            path: UITestAutomation/TestResults/*.trx    # Path to test results
             reporter: dotnet-trx        # Format of test results
