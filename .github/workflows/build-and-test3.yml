@@ -40,3 +40,9 @@ jobs:
             name: Test Results            # Name of the check run which will be created
             path: UITestAutomation/TestResults/*.trx    # Path to test results
             reporter: dotnet-trx        # Format of test results
+        permissions:
+          statuses: write
+          checks: write
+          contents: write
+          pull-requests: write
+          actions: write
