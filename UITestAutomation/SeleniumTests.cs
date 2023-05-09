@@ -25,7 +25,12 @@ namespace UITestAutomation
         {
             var options = new ChromeOptions();
 
-            driver = new ChromeDriver();
+            options.AddArguments("--no-sandbox"); //Bypass OS security model   
+            options.AddArguments("--start-maximized");
+            options.AddArguments("--disable-dev-shm-usage");
+            options.AddArguments("--headless");
+
+            driver = new ChromeDriver(options);
             var navigate = driver.Navigate();
 
             var bbcScotlandUrl = "https://www.bbc.co.uk/scotland";
