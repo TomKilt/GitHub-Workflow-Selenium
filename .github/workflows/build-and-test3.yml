@@ -19,6 +19,9 @@ jobs:
             
         #- name: Instal Chrome
         - uses: browser-actions/setup-chrome@v1
+          with:
+            chrome-version: 113.0
+          
         - run: chrome --version
         
         - name: Restore
