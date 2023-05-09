@@ -16,11 +16,10 @@ jobs:
           uses: actions/setup-dotnet@v3
           with:
             dotnet-version: 6.0.x
-
-        #- name: Install Chrome
-        #  run: |
-        #    chmod +x ./scripts/InstallChrome.sh
-        #    ./scripts/InstallChrome.sh
+            
+        #- name: Instal Chrome
+        - uses: browser-actions/setup-chrome@v1
+        - run: chrome --version
         
         - name: Restore
           run: dotnet restore UITestAutomation/UITestAutomation.csproj
@@ -29,7 +28,7 @@ jobs:
           run: dotnet build UITestAutomation/UITestAutomation.csproj --configuration Release --no-restore
           
         - name: Test run
-          run: dotnet test UITestAutomation/UITestAutomation.csproj --configuration Release --no-build --logger trx
+          run: dotnet test UITestAutomation/UITestAutomation.csproj --configuration Release --no-build --logger "trx;logfilename=testResults.trx"
 
         - name: Test Report
           uses: dorny/test-reporter@v1
