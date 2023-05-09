@@ -16,11 +16,27 @@ jobs:
           uses: actions/setup-dotnet@v3
           with:
             dotnet-version: 6.0.x
-
-        #- name: Install Chrome
-        #  run: |
-        #    chmod +x ./scripts/InstallChrome.sh
-        #    ./scripts/InstallChrome.sh
-
+            
+        #- name: Instal Chrome
+        - uses: browser-actions/setup-chrome@v1
+          with:
+            chrome-version: stable
+          
+        - run: chrome --version
+        
+        - name: Restore
+          run: dotnet restore UITestAutomation/UITestAutomation.csproj
+          
+        - name: Build
+          run: dotnet build UITestAutomation/UITestAutomation.csproj --configuration Release --no-restore
+          
         - name: Test run
-          run: dotnet test UITestAutomation.csproj --configuration Release --no-build -- verbosity normal
+          run: dotnet test UITestAutomation/UITestAutomation.csproj --configuration Release --no-build --logger "trx;logfilename=testResults.trx"
+
+        - name: Test Report
+          uses: dorny/test-reporter@v1
+          if: success() || failure()    # run this step even if previous step failed
+          with:
+            name: Test Results            # Name of the check run which will be created
+            path: UITestAutomation/*.trx    # Path to test results
+            reporter: dotnet-trx        # Format of test results
